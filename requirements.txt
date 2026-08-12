@@ -1,0 +1,28 @@
+# jupyterTest 학습 저장소 의존성 (Python 3.10+ / 3.12 에서 검증)
+#
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#   jupyter lab            # 또는 VS Code / PyCharm 에서 notebooks/ 열기
+
+# ── 노트북 실행 환경 ──────────────────────────────────────────
+jupyterlab>=4.0          # 노트북 편집·실행 (VS Code 를 쓴다면 ipykernel 만으로 충분)
+ipykernel>=6.29          # 커널. 가상환경을 커널로 등록할 때도 필요
+
+# ── 데이터 ────────────────────────────────────────────────────
+numpy>=1.26              # 02
+pandas>=2.0              # 03~05  (2.0 에서 DataFrame.append 가 삭제됐다 — 03 노트북 §5)
+matplotlib>=3.8          # 05
+
+# ── 웹 스크래핑 ───────────────────────────────────────────────
+requests>=2.31           # 06
+beautifulsoup4>=4.12     # 06
+lxml>=5.0                # 06 (pandas.read_html 백엔드 겸용)
+
+# ── 이미지 ────────────────────────────────────────────────────
+opencv-python>=4.10      # 08 (본격적인 OpenCV 학습은 opencvStudy 저장소 참고)
+
+# ── 선택 ──────────────────────────────────────────────────────
+# selenium>=4.15         # 07. 브라우저 자동화가 실제로 필요할 때만 설치
+#                        #     4.6+ 는 chromedriver 를 직접 내려받지 않아도 된다
+# jupytext>=1.16         # .ipynb ↔ .py 변환 (코드 리뷰·diff 용)
+# nbstripout>=0.7        # 커밋 시 출력 자동 제거 (출력을 커밋하지 않는 정책이라면)
