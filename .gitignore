@@ -148,3 +148,22 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/python,windows,jupyternotebooks
+# ─────────────────────────────────────────────────────────────
+# 이 저장소 추가분 (2026-08 정리)
+#   기존 템플릿에 .idea/·.DS_Store·생성물 규칙이 빠져 있어 그대로 커밋돼 있었다.
+# ─────────────────────────────────────────────────────────────
+
+# macOS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# 가상환경
+.venv/
+venv/
+
+# 생성물 — 전부 코드로 다시 만들 수 있으므로 커밋하지 않는다
+#   data/    : nbtools/data.py 가 생성 (python -m nbtools)
+#   outputs/ : 노트북 실행 산출물 (그래프 PNG, 스크랩 CSV 등)
+data/
+outputs/
